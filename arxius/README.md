@@ -12,11 +12,11 @@ Este repositorio contiene el material del curso de Machine Learning desarrollado
 
 Este repositorio está preparado para ser publicado con GitHub Pages.  
 Puedes ver la versión web pública en:  
-https://mireiaconsarnau.github.io/machine_learning/
+https://github.com/Dani9Miron/asix2-DaniMiron/
 
 ## Licencia
 
-El contenido está bajo licencia [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
+El contenido está bajo licencia [Creative Commons BY-NC-SA 4.0 ES](LICENSE.md).
 
 
 ---
