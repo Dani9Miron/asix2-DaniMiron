@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Curso de Machine Learning"
+title: "ASIX2 DANI MIRON"
 ---
 
-Este repositorio contiene el material del curso de Machine Learning desarrollado por Mireia Consarnau.
+Este repositorio contiene el material del curso de Machine Learning desarrollado por Dani Miron.
 
 - Índice y enlaces a las unidades del curso.
 - Recursos en formato PDF, vídeos, y Google Colab.
@@ -15,5 +15,5 @@ El contenido está bajo licencia [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
 
 ## Contenido del curso
 
-### [Unidad 1. Fundamentos de la Inteligencia Artificial y el Aprendizaje Automático](unidad1/unidad1.md)  
+### [Creació entorn d’arrencada amb systemd L](unidad1/unidad1.md)  
 
