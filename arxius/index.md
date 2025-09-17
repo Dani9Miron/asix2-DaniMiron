@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ASIX2 DANI MIRON"
+title: "ADMINISTRACIÓ DE SISTEMES OPERATIUS - DANI MIRON"
 ---
 
 Este repositorio contiene el material del curso de Machine Learning desarrollado por Dani Miron.
@@ -11,7 +11,7 @@ Este repositorio contiene el material del curso de Machine Learning desarrollado
 
 ## Licencia
 
-El contenido está bajo licencia [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
+El contenido está bajo licencia [Creative Commons BY-NC-SA 4.0 ES](LICENSE.md).
 
 ## Contenido del curso
 
