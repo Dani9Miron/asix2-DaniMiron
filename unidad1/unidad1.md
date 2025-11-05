@@ -43,7 +43,6 @@ I aqui veiem com ens a arribat el correu
 <img width="557" height="210" alt="image" src="https://github.com/user-attachments/assets/37d39d8c-6bfa-4444-a92b-047995e1a9e5" />
 
 
-
 ## Script Windows
 
 Creem les Carpetes 
