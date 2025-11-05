@@ -42,8 +42,7 @@ I aqui veiem com ens a arribat el correu
 
 <img width="557" height="210" alt="image" src="https://github.com/user-attachments/assets/37d39d8c-6bfa-4444-a92b-047995e1a9e5" />
 
-
-## Script Windows
+# Script Windows
 
 Creem les Carpetes 
 <img width="634" height="426" alt="image" src="https://github.com/user-attachments/assets/a9f5c6d2-db8c-4b3f-9734-9de92df59c1f" />
@@ -56,8 +55,10 @@ Creem el servei
 
 <img width="432" height="228" alt="image" src="https://github.com/user-attachments/assets/2cdb0b6d-cc42-4ea2-9f88-e4e9d01fff8b" />
 <img width="355" height="152" alt="image" src="https://github.com/user-attachments/assets/59c54db8-9f3c-444a-aed9-b6476356a696" />
+
 Aqui veem com esta el servei
 <img width="916" height="586" alt="image" src="https://github.com/user-attachments/assets/45278954-bc95-4b55-a4ed-b29a500636b8" />
+
 Reiniciem el sistema i veurem com se obri el nostre script
 <img width="899" height="890" alt="image" src="https://github.com/user-attachments/assets/23f7eef9-4f72-446f-a8b9-85bf9e41734d" />
 
