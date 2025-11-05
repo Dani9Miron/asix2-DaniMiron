@@ -8,7 +8,7 @@ title: "Sprint 1"
 Creem fitxer per a ficar el script
 <img width="491" height="27" alt="image" src="https://github.com/user-attachments/assets/ba95cccb-34a7-409d-9a1d-ded04cf60cda" />
 
-afegim el script i guardem 
+Afegim el script i guardem 
 <img width="598" height="338" alt="image" src="https://github.com/user-attachments/assets/dbc4d9f1-f274-4064-8d81-afe154c19071" />
 
 Donem permisos al archiu
@@ -41,4 +41,30 @@ Iniciem  servei
 I aqui veiem com ens a arribat el correu
 
 <img width="557" height="210" alt="image" src="https://github.com/user-attachments/assets/37d39d8c-6bfa-4444-a92b-047995e1a9e5" />
+
+
+
+## Script Windows
+
+Creem les Carpetes 
+<img width="634" height="426" alt="image" src="https://github.com/user-attachments/assets/a9f5c6d2-db8c-4b3f-9734-9de92df59c1f" />
+<img width="795" height="198" alt="image" src="https://github.com/user-attachments/assets/0a924f6f-3b68-4c3d-a397-616a2d530b65" />
+
+Creem el script 
+<img width="918" height="901" alt="image" src="https://github.com/user-attachments/assets/a200707a-e350-48ae-8dc6-2ba12b0735b1" />
+
+Creem el servei
+
+<img width="432" height="228" alt="image" src="https://github.com/user-attachments/assets/2cdb0b6d-cc42-4ea2-9f88-e4e9d01fff8b" />
+<img width="355" height="152" alt="image" src="https://github.com/user-attachments/assets/59c54db8-9f3c-444a-aed9-b6476356a696" />
+Aqui veem com esta el servei
+<img width="916" height="586" alt="image" src="https://github.com/user-attachments/assets/45278954-bc95-4b55-a4ed-b29a500636b8" />
+Reiniciem el sistema i veurem com se obri el nostre script
+<img width="899" height="890" alt="image" src="https://github.com/user-attachments/assets/23f7eef9-4f72-446f-a8b9-85bf9e41734d" />
+
+
+
+
+
+
 
