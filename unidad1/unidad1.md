@@ -64,6 +64,77 @@ Reiniciem el sistema i veurem com se obri el nostre script
 
 
 
+# Configuració del Certificat SSL (Windows Server AD CS y IIS)
+
+Aquest document detalla el procés complet de depuració i configuració per a habilitar HTTPS en el servidor IIS utilitzant una Entitat de Certificació (AD CS) pròpia.
+
+## 1. Problema Inicial: Error al generar certificat
+Es va intentar generar el certificat mitjançant PowerShell (`Get-Certificate`), però va fallar per incompatibilitat de noms de plantilla o permisos. La consola gràfica `certlm.msc` mostrava que la plantilla "Web Server-SAN" no estava disponible.
+
+![Error plantilla no disponible](img/02_error_plantilla.png)
+*Error: "No tiene permiso para solicitar este tipo de certificado"*
+
+## 2. Solució de Permisos (Windows)
+Per a permetre que la màquina (i no l'usuari) sol·liciti el certificat, es van haver de modificar els permisos de la plantilla a la consola `certtmpl.msc`:
+1.  Es va afegir el grup **Controladores de dominio** (ja que el servidor és un DC) i **Equipos del dominio**.
+2.  Es va concedir el permís de **Inscribirse** (Enroll).
+
+![Permisos de la plantilla](img/03_permisos_plantilla.png)
+
+## 3. Problema de Confiança (Untrusted Root)
+En intentar inscriure el certificat després d'arreglar els permisos, va aparèixer l'error `0x800b0109 (CERT_E_UNTRUSTEDROOT)`. Això passa perquè el servidor no confiava en la seva pròpia CA autofirmada recentment creada.
+
+![Error Untrusted Root](img/04_error_untrusted.png)
+
+**Solució:**
+1.  Exportar el certificat arrel de la CA (`root.cer`).
+2.  Instal·lar-lo manualment en el magatzem **"Entidades de certificación raíz de confianza"** de l'equip local.
+
+## 4. Generació Correcta del Certificat
+Un cop solucionada la confiança, es va poder sol·licitar el certificat via `certlm.msc` configurant:
+*   **Nom Comú (CN):** `dani.local`
+*   **Nom Alternatiu (SAN - DNS):** `dani.local`
+
+![Configuració del certificat](img/05_config_cert_san.png)
+
+## 5. Configuració del Servidor Web (IIS)
+Amb el certificat generat, es va assignar al lloc web en l'IIS Administrator:
+*   Enllaç (Binding): HTTPS port 443.
+*   Certificat SSL: Seleccionar `dani.local` (el nou, no el de la CA).
+
+![Binding en IIS](img/06_iis_binding.png)
+
+## 6. Configuració de DNS (Hosts)
+Com que `dani.local` no existeix a Internet, es va modificar l'arxiu `hosts` per a apuntar el domini a la IP local (`127.0.0.1` en Windows, IP real en clients).
+
+**Comanda PowerShell utilitzada:**
+```powershell
+Add-Content -Path "C:\Windows\System32\drivers\etc\hosts" -Value "127.0.0.1 dani.local"
+```
+
+![Fix Hosts en PowerShell](img/07_dns_hosts.png)
+
+---
+
+## 7. Configuració del Client (Ubuntu)
+Per a validar el funcionament des d'una altra màquina:
+
+1.  **Configuració DNS:** Es va afegir la IP del servidor Windows (`192.168.203.150`) a `/etc/hosts`.
+    ![Ping correcte des d'Ubuntu](img/08_ubuntu_ping.png)
+
+2.  **Instal·lació del Certificat Arrel:**
+    Es va copiar el fitxer `root.cer` a Ubuntu i es va instal·lar per a evitar l'error de "Lloc no segur".
+    ```bash
+    sudo cp root.cer /usr/local/share/ca-certificates/dani-ca.crt
+    sudo update-ca-certificates
+    ```
+
+    ![Instal·lació CA en Ubuntu](img/09_ubuntu_cert.png)
+
+**Resultat final:** Accés segur HTTPS des del client sense advertències de seguretat.
+
+
+
 
 
 
