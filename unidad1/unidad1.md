@@ -133,6 +133,73 @@ Per a validar el funcionament des d'una altra màquina:
 
 **Resultat final:** Accés segur HTTPS des del client sense advertències de seguretat.
 
+## Configuració de Servidor LAMP amb SSL Auto signat
+
+
+Instal·larem el "cor" del servidor web.
+
+<img width="568" height="51" alt="image" src="https://github.com/user-attachments/assets/ff92633f-0697-42ab-88e9-3cc9c5ef8faf" />
+
+<img width="600" height="260" alt="image" src="https://github.com/user-attachments/assets/ff60fec6-dc3c-462c-8123-0a5b6c485f78" />
+
+
+Apache2: És el servidor web que rep les peticions HTTP/HTTPS i serveix les pàgines.
+MariaDB: El gestor de bases de dades (fork de MySQL).
+PHP: El llenguatge de programació que processarà el codi del costat del servidor.
+libapache2-mod-php: El "pont" que permet que Apache entengui i executi codi PHP.
+
+
+Anem a crear la prova de concepte perquè el servidor ens saludi.
+
+<img width="553" height="134" alt="image" src="https://github.com/user-attachments/assets/7bb0b9d4-fb9a-4dbe-ac40-ee53aac1a239" />
+
+/var/www/html és l'arrel pública del servidor. Qualsevol fitxer aquí és accessible des del navegador. La funció phpinfo() és vital en sistemes operatius per verificar que tots els mòduls de PHP s'han carregat correctament.
+
+
+
+Perquè una pàgina funcioni sota HTTPS, necessita un certificat que xifri la comunicació entre el client i el servidor.
+
+<img width="601" height="357" alt="image" src="https://github.com/user-attachments/assets/fb79009b-cc2c-4350-9aa6-5d7931e534dc" />
+
+req -x509: Especifica que volem un certificat auto-signat.
+rsa:2048: Crea una clau RSA de 2048 bits (estàndard de seguretat).
+keyout: On es guarda la clau privada (prohibit compartir-la!).
+out: On es guarda el certificat públic.
+
+
+ Configuració del Virtual Host SSL
+Ara hem de dir-li a Apache que utilitzi aquests fitxers per al port 443 (HTTPS).
+Editem el fitxer de configuració:
+
+<img width="588" height="519" alt="image" src="https://github.com/user-attachments/assets/63dbc649-6830-4336-930f-e96a95c6ab4b" />
+
+Hem de modificar o verificar aquestes línies:
+DocumentRoot /var/www/html (Asegura't que apunta on tens l'index.php).
+SSLCertificateFile /etc/ssl/certs/servidor.crt
+SSLCertificateKeyFile /etc/ssl/private/servidor.key
+
+
+Activació de mòduls i reinici
+Apache no activa el xifrat per defecte per estalviar recursos. L'hem d'activar manualment.
+
+<img width="600" height="140" alt="image" src="https://github.com/user-attachments/assets/b4091e31-33f5-4ddd-a280-745f866decfd" />
+
+<img width="545" height="88" alt="image" src="https://github.com/user-attachments/assets/922e2e9e-2e57-413d-b81c-3ad0046fd8e6" />
+
+
+Fiquem el index.php davant de tot per a que funcione
+<img width="535" height="86" alt="image" src="https://github.com/user-attachments/assets/6f3b5608-03df-4eca-b44c-608cff8712b3" />
+
+<img width="601" height="541" alt="image" src="https://github.com/user-attachments/assets/ca804ccf-2c6c-4cf4-9866-744ad4f58630" />
+
+
+
+
+
+
+
+
+
 
 
 
